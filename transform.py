@@ -76,7 +76,11 @@ def create_task(url_list):
             return token_value
         token = {"access_token": token_value}
         headers = {'content-type': "application/json"}
-        response_item = eval(requests.post(response_url, params=token, data=json.dumps(body), headers=headers).text)
+        try:
+            t = requests.post(response_url, params=token, data=json.dumps(body), headers=headers)
+        except:
+            return Error(USE_POST_ERROR)
+        response_item = eval(t.text)
         if response_item.get("error_code") is None and response_item.get("task_id") is not None:
             task_list.append(response_item.get("task_id"))
         else:

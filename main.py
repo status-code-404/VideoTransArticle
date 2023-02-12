@@ -47,6 +47,8 @@ def main():
         return
     task_list = create_task(url_list)
     if type(task_list) == Error:
+        if task_list.get_code() == USE_POST_ERROR:
+            print("使用request_post方法出错，检查是否开了代理")
         print("程序将自动关闭")
         time.sleep(15)
         return

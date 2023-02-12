@@ -8,6 +8,7 @@ Attention:
 1.  in win system I use winreg pack, which means the program needs admin privilege to edit registry
 2. in other system you need to set the environment (tencent cos secretId and key) by yourself (in the following edition maybe will add auto environment set function) 
 3. Don't forget to make cos public read
+4. Use request to get results from client so don't use vpn
 
 
 一个中文的小玩应，应用场景：适用于教师将录下的课程重新转换成文字成为自己的讲稿 或一些其他长音频转文字方向
