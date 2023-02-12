@@ -99,13 +99,17 @@ def get_result(task_list):
     token = {"access_token": token_value}
     headers = {'content-type': "application/json"}
     task_num = 0
+    print("等待baiduAI进行翻译")
     try:
         response_item = eval(requests.post(response_url, params=token, data=json.dumps(body), headers=headers).text)
         while task_num < len(response_item.get("tasks_info")):
+            response_item = eval(requests.post(response_url, params=token, data=json.dumps(body), headers=headers).text)
             if response_item["tasks_info"][task_num]["task_status"] == "Running":
                 task_num = 0
                 time.sleep(10)
-            task_num += 1
+            else:
+                task_num += 1
+
 
         for task in response_item.get("tasks_info"):
             words = ""
@@ -121,7 +125,7 @@ def get_result(task_list):
             writer.write(requests.post(response_url, params=token, data=json.dumps(body), headers=headers).text)
         return Error(BAIDU_QUERY_TASK_FORMAT_CHANGE)
     with open("result.txt", "w", encoding="utf8") as writer:
-        print("文件已写入统计目录下的result.txt中，请及时查看")
+        print("翻译成功， 译文文件已写入同一目录下的result.txt中，请及时查看")
         writer.write(words)
 
     input("Transform Done,  按任意键结束软件")

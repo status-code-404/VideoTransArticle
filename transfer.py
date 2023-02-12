@@ -28,6 +28,5 @@ def transfer(file_list):
             print(str(reponse))
             return Error(TRANSFORM_ERROR)
         url_list.append(client.get_object_url(Bucket=BUCKET, Key=file))
-    print(url_list)
     return url_list
 

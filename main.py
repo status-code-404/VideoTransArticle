@@ -45,6 +45,9 @@ def main():
         print("程序将自动关闭")
         time.sleep(15)
         return
+    print(" 上传文件完成， url_list:")
+    print(url_list)
+
     task_list = create_task(url_list)
     if type(task_list) == Error:
         if task_list.get_code() == USE_POST_ERROR:
@@ -52,6 +55,8 @@ def main():
         print("程序将自动关闭")
         time.sleep(15)
         return
+    print("创建任务完成, task_ids:")
+    print(task_list)
 
     error = get_result(task_list)
     if error is not None:
