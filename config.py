@@ -49,7 +49,7 @@ def register(is_windows: bool):
             winreg.SetValue(winreg.HKEY_LOCAL_MACHINE, "SOFTWARE\AudioTrans\BaiduSecretKey", winreg.REG_SZ, baidu_secret_key)
             return tencent_secret_id, tencent_secret_key, baidu_secret_id, baidu_secret_key
         except Exception as e:
-            if e[1] == "拒绝访问":
+            if e.args[1] == "拒绝访问":
                 print("Please run the app with admin privilege")
                 return Error(NEED_ADMIN)
             else:
