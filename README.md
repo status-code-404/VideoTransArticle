@@ -11,7 +11,7 @@ Instructions:
 4. If some exception occurs , they will be recorded into same level fix_problem.txt
 
 Attention:
-1.  This app now only support Windows System because In Windows system because the program needs admin privilege to edit registry (I use winreg package)
+1.  This app now only support Windows System because In Windows system because the program needs admin privilege to edit registry (I use winreg package, and will support other system in the following editions)
 2. When you first run this program, you need provide admin privilege because first time the program need edit the registry to record BaiduAI key and Tencent COS key.
 3. Don't forget to make Tencent COS privilege public read
 4. When an Exception occurs , most probably reason is because the requests package I use, check if you can use requests package normally
