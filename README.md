@@ -1,19 +1,20 @@
 # VideoTransArticle
-Transfer the video to the words, can be used in situation such as speech video, lesson record......
-1. Trans video to audio and cut them in sections (the baiduAI API has limits of the file size)
-2. Use Tencent Cos store the audio file,
-3. Use BaiduAI transform the audio into words
+Transform the video into text. Can be used in speech video, lesson record......
+1. Transform video to audio and cut them in sections (the baiduAI API has limit of the file size)
+2. Use Tencent COS to store the audio file,
+3. Use BaiduAI to transform the audio into words
 
 Instructions:
-1. you need to register BaiduAI apply a speech ai app to get id and key and same thing on TencentCloud COS service (both cheap) 
-2. move the file into same level dictionary and input the filename or just input the file path
-3. wait and the result will be written into the same level dictionary result.txt
+1. Firstly you need to register BaiduAI to apply a speech AI app where you can get id and key and do the same thing on TencentCloud COS service (both cheap) 
+2. Move the file into same level dictionary and input the filename or just input the file path
+3. Wait util result will be written into the same level dictionary result.txt
+4. If some exception occurs , they will be recorded into same level fix_problem.txt
 
 Attention:
-1.  in win system I use winreg pack, which means the program needs admin privilege to edit registry
-2. in other system you need to set the environment (tencent cos , baidu AI secretId and key) by yourself (in the following edition maybe will add auto environment set function) 
-3. Don't forget to make cos public read
-4. Use request to get results from client so don't use vpn
+1.  This app now only support Windows System because In Windows system because the program needs admin privilege to edit registry (I use winreg package)
+2. When you first run this program, you need provide admin privilege because first time the program need edit the registry to record BaiduAI key and Tencent COS key.
+3. Don't forget to make Tencent COS privilege public read
+4. When an Exception occurs , most probably reason is because the requests package I use, check if you can use requests package normally
 
 
 一个中文的小玩应，应用场景：适用于教师将录下的课程重新转换成文字成为自己的讲稿 或一些其他长音频转文字方向
