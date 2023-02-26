@@ -5,7 +5,7 @@ Transform the video into text. Can be used in speech video, lesson record......
 3. Use BaiduAI to transform the audio into words
 
 Instructions:
-1. Firstly you need to register BaiduAI to apply a speech AI app where you can get id and key and do the same thing on TencentCloud COS service (both cheap) 
+1. Firstly you need to register BaiduAI to apply a speech AI app where you can get id and key and do the same thing on TencentCloud COS service (both cheap and **have free trial**) 
 2. Move the file into same level dictionary and input the filename or just input the file path
 3. Wait util result will be written into the same level dictionary result.txt
 4. If some exception occurs , they will be recorded into same level fix_problem.txt
